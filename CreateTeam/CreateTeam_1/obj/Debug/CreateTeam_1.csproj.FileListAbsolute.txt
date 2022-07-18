@@ -164,3 +164,4 @@ C:\GIT\Automation\CreateTeam\CreateTeam_1\obj\Debug\CreateTeam_1.csproj.CoreComp
 C:\GIT\Automation\CreateTeam\CreateTeam_1\obj\Debug\CreateTeam_1.csproj.CopyComplete
 C:\GIT\Automation\CreateTeam\CreateTeam_1\obj\Debug\CreateTeam_1.dll
 C:\GIT\Automation\CreateTeam\CreateTeam_1\obj\Debug\CreateTeam_1.pdb
+C:\GIT\Automation\CreateTeam\CreateTeam_1\obj\Debug\CreateTeam_1.csproj.AssemblyReference.cache
