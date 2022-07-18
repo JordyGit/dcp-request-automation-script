@@ -63,10 +63,6 @@
       <HintPath>..\Dlls\messagebroker\SLSharedBrainLite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <ProjectReference Include="..\AutomationScript_ClassLibrary\AutomationScript_ClassLibrary.csproj">
-      <Project>{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}</Project>
-      <Name>AutomationScript_ClassLibrary</Name>
-    </ProjectReference>
     <Reference Include="SLManagedAutomation">
       <HintPath>C:\Skyline DataMiner\Files\SLManagedAutomation.dll</HintPath>
     </Reference>
@@ -122,7 +118,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties DisLinkedXmlFile="..\CreateTeam.xml" DisProjectType="automationScriptProject" DisLinkId="1" />
+      <UserProperties DisLinkId="1" DisProjectType="automationScriptProject" DisLinkedXmlFile="..\CreateTeam.xml" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

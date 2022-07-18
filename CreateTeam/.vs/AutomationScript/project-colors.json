@@ -35,7 +35,12 @@
       "ProjectGuid": "37289c3c-e334-4f93-a0de-f69eda08e656",
       "DisplayName": "Actions",
       "ColorIndex": 5
+    },
+    "f3642d3d-efc2-4877-a6c0-6e0e14e62dfa": {
+      "ProjectGuid": "f3642d3d-efc2-4877-a6c0-6e0e14e62dfa",
+      "DisplayName": "AutomationScript_ClassLibrary",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
