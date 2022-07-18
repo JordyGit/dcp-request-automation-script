@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0b079f58-22d2-48a0-bced-b2bc7180df20": {
+      "ProjectGuid": "0b079f58-22d2-48a0-bced-b2bc7180df20",
+      "DisplayName": "Dlls",
+      "ColorIndex": 0
+    },
+    "fa9116d8-7caf-447d-a241-8349c7709d1a": {
+      "ProjectGuid": "fa9116d8-7caf-447d-a241-8349c7709d1a",
+      "DisplayName": "Documentation",
+      "ColorIndex": 1
+    },
+    "89ab536e-c95d-4a77-8630-fd7ca2b25d03": {
+      "ProjectGuid": "89ab536e-c95d-4a77-8630-fd7ca2b25d03",
+      "DisplayName": "Code Analysis",
+      "ColorIndex": 2
+    },
+    "9a928cca-526b-4c8f-8080-949b1fef7464": {
+      "ProjectGuid": "9a928cca-526b-4c8f-8080-949b1fef7464",
+      "DisplayName": "CreateTeam",
+      "ColorIndex": 3
+    },
+    "0daaf9bd-11bf-4fd8-bedf-3c8c2852c882": {
+      "ProjectGuid": "0daaf9bd-11bf-4fd8-bedf-3c8c2852c882",
+      "DisplayName": "CreateTeam_1",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "37289c3c-e334-4f93-a0de-f69eda08e656": {
+      "ProjectGuid": "37289c3c-e334-4f93-a0de-f69eda08e656",
+      "DisplayName": "Actions",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

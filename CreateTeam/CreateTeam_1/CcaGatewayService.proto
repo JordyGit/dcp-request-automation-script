@@ -1,0 +1,35 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package Skyline.Dataminer.Proto.CcaGatewayTypes;
+
+message GetCloudAccessTokenRequest {
+    string scopes = 1;
+}
+
+message GetCloudAccessTokenResponse {
+	CcaGatewayError error = 1;
+	string accessToken = 2;
+	google.protobuf.Timestamp expirationDate = 3;
+}
+
+message CcaGatewayError {
+	bool containsError = 1;
+	repeated SingleCcaGatewayError errors = 2;
+}
+
+message SingleCcaGatewayError {
+	CcaGatewayErrorType type = 1;
+	string message = 2;
+}
+
+enum CcaGatewayErrorType {
+	GENERAL = 0;
+	REMOTE_CCA_HUB_FAILURE = 1;
+	CCA_ADMIN_IDENTITY_REJECTED_BY_REMOTE = 2;
+	DMS_CLOUD_IDENTITY_REJECTED_BY_REMOTE = 3;
+	CCA_ADMIN_IDENTITY_NOT_CONFIGURED = 4;
+	DMS_CLOUD_IDENTITY_NOT_CONFIGURED = 5;
+	REMOTE_CCA_AUTH_FAILURE = 6;
+}

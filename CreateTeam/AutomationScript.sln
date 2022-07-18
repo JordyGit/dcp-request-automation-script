@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{5F60A981-9EE6-4B01-8DE3-68502EE604E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6F05F74D-0CAC-437C-B2CE-64B24816EF81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{0B079F58-22D2-48A0-BCED-B2BC7180DF20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{FA9116D8-7CAF-447D-A241-8349C7709D1A}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\readme.txt = Documentation\readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{89AB536E-C95D-4A77-8630-FD7CA2B25D03}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationScript_ClassLibrary", "AutomationScript_ClassLibrary\AutomationScript_ClassLibrary.csproj", "{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateTeam", "CreateTeam", "{9A928CCA-526B-4C8F-8080-949B1FEF7464}"
+	ProjectSection(SolutionItems) = preProject
+		CreateTeam.xml = CreateTeam.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{37289C3C-E334-4F93-A0DE-F69EDA08E656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateTeam_1", "CreateTeam_1\CreateTeam_1.csproj", "{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messagebroker", "messagebroker", "{9CEF24DA-0164-499C-AEB1-3E2A9B4E6B5B}"
+	ProjectSection(SolutionItems) = preProject
+		Dlls\messagebroker\NATS.Client.dll = Dlls\messagebroker\NATS.Client.dll
+		Dlls\messagebroker\SLMessageBroker.dll = Dlls\messagebroker\SLMessageBroker.dll
+		Dlls\messagebroker\SLMessageBrokerXmlWriter.dll = Dlls\messagebroker\SLMessageBrokerXmlWriter.dll
+		Dlls\messagebroker\SLSharedBrainLite.dll = Dlls\messagebroker\SLSharedBrainLite.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89AB536E-C95D-4A77-8630-FD7CA2B25D03} = {5F60A981-9EE6-4B01-8DE3-68502EE604E1}
+		{F3642D3D-EFC2-4877-A6C0-6E0E14E62DFA} = {5F60A981-9EE6-4B01-8DE3-68502EE604E1}
+		{9A928CCA-526B-4C8F-8080-949B1FEF7464} = {6F05F74D-0CAC-437C-B2CE-64B24816EF81}
+		{37289C3C-E334-4F93-A0DE-F69EDA08E656} = {9A928CCA-526B-4C8F-8080-949B1FEF7464}
+		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882} = {37289C3C-E334-4F93-A0DE-F69EDA08E656}
+		{9CEF24DA-0164-499C-AEB1-3E2A9B4E6B5B} = {0B079F58-22D2-48A0-BCED-B2BC7180DF20}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB080A01-47D7-4AE6-98EE-CE86D4294DB8}
+	EndGlobalSection
+EndGlobal
