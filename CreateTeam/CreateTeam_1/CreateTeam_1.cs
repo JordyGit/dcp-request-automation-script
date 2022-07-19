@@ -53,6 +53,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf.WellKnownTypes;
@@ -61,6 +62,8 @@ using Skyline.DataMiner.MessageBroker;
 using Skyline.DataMiner.MessageBroker.ProtoHelpers;
 using Skyline.Dataminer.Proto.CcaGatewayTypes;
 using Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 /// <summary>
 /// DataMiner Script Class.
@@ -106,7 +109,10 @@ public class Script
 		// Fetch dms authentication token from CloudGateway using NATS
 		engine.Log("Fetching DMS Authentication token...");
 		
-		var tokenResponse = broker.ProtoReqReply(new GetCloudAccessTokenRequest(), GetCloudAccessTokenResponse.Parser);
+		var tokenResponse = broker.ProtoReqReply(new GetCloudAccessTokenRequest()
+		{
+			Scopes = "6091cf86-293d-40ae-ba35-8378f60db93e/.default"
+		}, GetCloudAccessTokenResponse.Parser);
 
 		if (tokenResponse.Error != null && tokenResponse.Error.ContainsError)
 		{
@@ -124,14 +130,19 @@ public class Script
 
 		// Send request over NATS (via CloudGateway DxM to the cloud)
 		engine.Log("Sending request to DCP...");
-		
+
+		var requestBody = new JObject();
+		requestBody.Add("team_name", "JordyGitIsHere");
+		requestBody.Add("team_owner", "jordy.ampe@skyline.be");
+		requestBody.Add("tenant_id", "3e20f27a-3ed5-4aad-83bc-335836538d60");
 		var response = broker.ProtoReqReply(new DcpRequestResponseRequest()
 		{
 			DcpRequest = new DcpRequest()
 			{
 				Token = tokenResponse.AccessToken,
-				Path = "some/path",
-				JsonBody = ":)"
+				Path = "/dms-teams/v1-0/team",
+				HttpMethod = HttpMethod.Post.ToString(),
+				JsonBody = JsonConvert.SerializeObject(requestBody)
 			}
 		}, DcpRequestResponseResponse.Parser);
 
@@ -147,6 +158,6 @@ public class Script
 		broker.Dispose();
 
 		// Respond
-		engine.ExitSuccess("Done, all good.");
+		engine.ExitSuccess($"Done, all good. Response was: Code: {response.DcpResponse.StatusCode} Body: {response.DcpResponse.JsonBody}");
 	}
 }

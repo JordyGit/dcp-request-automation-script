@@ -32,16 +32,16 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
             "cXVlc3RSZXNwb25zZVJlc3BvbnNlEhYKDmNvbnRhaW5zX2Vycm9yGAEgASgI",
             "Eg0KBWVycm9yGAIgASgJEloKDGRjcF9yZXNwb25zZRgDIAEoCzJELlNreWxp",
             "bmUuRGF0YW1pbmVyLlByb3RvLkNsb3VkR2F0ZXdheURjcFJlcXVlc3RSZXNw",
-            "b25zZXMuRGNwUmVzcG9uc2UiPAoKRGNwUmVxdWVzdBINCgV0b2tlbhgBIAEo",
-            "CRIMCgRwYXRoGAIgASgJEhEKCWpzb25fYm9keRgDIAEoCSI0CgtEY3BSZXNw",
-            "b25zZRISCgpzdGF0dXNDb2RlGAEgASgFEhEKCWpzb25fYm9keRgCIAEoCWIG",
-            "cHJvdG8z"));
+            "b25zZXMuRGNwUmVzcG9uc2UiUQoKRGNwUmVxdWVzdBINCgV0b2tlbhgBIAEo",
+            "CRIMCgRwYXRoGAIgASgJEhEKCWpzb25fYm9keRgDIAEoCRITCgtodHRwX21l",
+            "dGhvZBgEIAEoCSI0CgtEY3BSZXNwb25zZRISCgpzdGF0dXNDb2RlGAEgASgF",
+            "EhEKCWpzb25fYm9keRgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequestResponseRequest), global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequestResponseRequest.Parser, new[]{ "DcpRequest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequestResponseResponse), global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequestResponseResponse.Parser, new[]{ "ContainsError", "Error", "DcpResponse" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequest), global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequest.Parser, new[]{ "Token", "Path", "JsonBody" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequest), global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpRequest.Parser, new[]{ "Token", "Path", "JsonBody", "HttpMethod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpResponse), global::Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses.DcpResponse.Parser, new[]{ "StatusCode", "JsonBody" }, null, null, null, null)
           }));
     }
@@ -556,6 +556,7 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       token_ = other.token_;
       path_ = other.path_;
       jsonBody_ = other.jsonBody_;
+      httpMethod_ = other.httpMethod_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -601,6 +602,18 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       }
     }
 
+    /// <summary>Field number for the "http_method" field.</summary>
+    public const int HttpMethodFieldNumber = 4;
+    private string httpMethod_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string HttpMethod {
+      get { return httpMethod_; }
+      set {
+        httpMethod_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -619,6 +632,7 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       if (Token != other.Token) return false;
       if (Path != other.Path) return false;
       if (JsonBody != other.JsonBody) return false;
+      if (HttpMethod != other.HttpMethod) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -629,6 +643,7 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (Path.Length != 0) hash ^= Path.GetHashCode();
       if (JsonBody.Length != 0) hash ^= JsonBody.GetHashCode();
+      if (HttpMethod.Length != 0) hash ^= HttpMethod.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -659,6 +674,10 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
         output.WriteRawTag(26);
         output.WriteString(JsonBody);
       }
+      if (HttpMethod.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(HttpMethod);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -681,6 +700,10 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
         output.WriteRawTag(26);
         output.WriteString(JsonBody);
       }
+      if (HttpMethod.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(HttpMethod);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -699,6 +722,9 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       }
       if (JsonBody.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(JsonBody);
+      }
+      if (HttpMethod.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HttpMethod);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -720,6 +746,9 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
       }
       if (other.JsonBody.Length != 0) {
         JsonBody = other.JsonBody;
+      }
+      if (other.HttpMethod.Length != 0) {
+        HttpMethod = other.HttpMethod;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -748,6 +777,10 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
             JsonBody = input.ReadString();
             break;
           }
+          case 34: {
+            HttpMethod = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -773,6 +806,10 @@ namespace Skyline.Dataminer.Proto.CloudGatewayDcpRequestResponses {
           }
           case 26: {
             JsonBody = input.ReadString();
+            break;
+          }
+          case 34: {
+            HttpMethod = input.ReadString();
             break;
           }
         }

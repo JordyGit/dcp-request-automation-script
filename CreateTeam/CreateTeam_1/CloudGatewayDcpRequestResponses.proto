@@ -16,6 +16,7 @@ message DcpRequest {
 	string token = 1;
 	string path = 2;
 	string json_body = 3;
+	string http_method = 4;
 }
 
 message DcpResponse {

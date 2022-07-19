@@ -40,7 +40,12 @@
       "ProjectGuid": "f3642d3d-efc2-4877-a6c0-6e0e14e62dfa",
       "DisplayName": "AutomationScript_ClassLibrary",
       "ColorIndex": 6
+    },
+    "e8d5184a-7898-4ac0-8e69-787684e98e77": {
+      "ProjectGuid": "e8d5184a-7898-4ac0-8e69-787684e98e77",
+      "DisplayName": "Code Analysis",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }

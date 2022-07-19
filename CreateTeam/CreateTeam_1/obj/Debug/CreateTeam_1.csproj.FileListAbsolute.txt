@@ -268,7 +268,6 @@ C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLManaged
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLMessageBroker.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLMessageBrokerXmlWriter.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLNetTypes.dll
-C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLSharedBrainLite.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Buffers.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Memory.dll
@@ -303,10 +302,8 @@ C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\Microsoft
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\Google.Protobuf.pdb
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\Google.Protobuf.xml
-C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\SLNetTypes.pdb
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Buffers.xml
-C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Memory.xml
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Numerics.Vectors.xml
 C:\GIT\dcp-request-automation-script\CreateTeam\CreateTeam_1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
