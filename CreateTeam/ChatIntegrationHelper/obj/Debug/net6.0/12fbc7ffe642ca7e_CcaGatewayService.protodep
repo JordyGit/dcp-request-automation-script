@@ -1,2 +1,0 @@
-obj\Debug\net6.0\protos/CcaGatewayService.cs: C:/Users/JordyAM/.nuget/packages/grpc.tools/2.47.0/build/native/include/google/protobuf/timestamp.proto\
- protos/CcaGatewayService.proto
