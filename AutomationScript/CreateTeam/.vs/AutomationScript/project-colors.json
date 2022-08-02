@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2c168c57-95dd-4c61-b249-74a32391fd2d": {
+      "ProjectGuid": "2c168c57-95dd-4c61-b249-74a32391fd2d",
+      "DisplayName": "Dlls",
+      "ColorIndex": 0
+    },
+    "b19b7717-8002-4833-a4c6-94af9388baea": {
+      "ProjectGuid": "b19b7717-8002-4833-a4c6-94af9388baea",
+      "DisplayName": "Documentation",
+      "ColorIndex": 1
+    },
+    "866b0b0f-163e-446f-9d23-61062619f33a": {
+      "ProjectGuid": "866b0b0f-163e-446f-9d23-61062619f33a",
+      "DisplayName": "Code Analysis",
+      "ColorIndex": 2
+    },
+    "acda5228-c28b-4080-9a9e-1c142be23a4b": {
+      "ProjectGuid": "acda5228-c28b-4080-9a9e-1c142be23a4b",
+      "DisplayName": "CreateTeam",
+      "ColorIndex": 3
+    },
+    "d33afe58-2429-4ea6-96ea-33686c50d7d5": {
+      "ProjectGuid": "d33afe58-2429-4ea6-96ea-33686c50d7d5",
+      "DisplayName": "CreateTeam_1",
+      "ColorIndex": 4
+    },
+    "5413dd08-a24c-485d-8869-c8a89518709c": {
+      "ProjectGuid": "5413dd08-a24c-485d-8869-c8a89518709c",
+      "DisplayName": "ChatIntegrationHelper",
+      "ColorIndex": 5
+    },
+    "0b03ea75-f3e5-417e-aff3-d8376661419a": {
+      "ProjectGuid": "0b03ea75-f3e5-417e-aff3-d8376661419a",
+      "DisplayName": "Actions",
+      "ColorIndex": 6
+    },
+    "ed38553b-b34c-4da7-9188-f03035e60790": {
+      "ProjectGuid": "ed38553b-b34c-4da7-9188-f03035e60790",
+      "DisplayName": "SLChatIntegrationHelper",
+      "ColorIndex": 7
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 8
+}

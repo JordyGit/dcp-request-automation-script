@@ -3,39 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6F05F74D-0CAC-437C-B2CE-64B24816EF81}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{0B079F58-22D2-48A0-BCED-B2BC7180DF20}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{FA9116D8-7CAF-447D-A241-8349C7709D1A}"
-	ProjectSection(SolutionItems) = preProject
-		Documentation\readme.txt = Documentation\readme.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateTeam", "CreateTeam", "{9A928CCA-526B-4C8F-8080-949B1FEF7464}"
-	ProjectSection(SolutionItems) = preProject
-		CreateTeam.xml = CreateTeam.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{37289C3C-E334-4F93-A0DE-F69EDA08E656}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateTeam_1", "CreateTeam_1\CreateTeam_1.csproj", "{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messagebroker", "messagebroker", "{9CEF24DA-0164-499C-AEB1-3E2A9B4E6B5B}"
-	ProjectSection(SolutionItems) = preProject
-		Dlls\messagebroker\NATS.Client.dll = Dlls\messagebroker\NATS.Client.dll
-		Dlls\messagebroker\SLMessageBroker.dll = Dlls\messagebroker\SLMessageBroker.dll
-		Dlls\messagebroker\SLMessageBrokerXmlWriter.dll = Dlls\messagebroker\SLMessageBrokerXmlWriter.dll
-		Dlls\messagebroker\SLSharedBrainLite.dll = Dlls\messagebroker\SLSharedBrainLite.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{9DCCE858-101B-4995-88D2-92F052CB72D0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{E8D5184A-7898-4AC0-8E69-787684E98E77}"
-	ProjectSection(SolutionItems) = preProject
-		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
-		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatIntegrationHelper", "ChatIntegrationHelper\ChatIntegrationHelper.csproj", "{F848D7A5-D062-413C-95CC-A0015E478CDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,20 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F848D7A5-D062-413C-95CC-A0015E478CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F848D7A5-D062-413C-95CC-A0015E478CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F848D7A5-D062-413C-95CC-A0015E478CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F848D7A5-D062-413C-95CC-A0015E478CDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9A928CCA-526B-4C8F-8080-949B1FEF7464} = {6F05F74D-0CAC-437C-B2CE-64B24816EF81}
-		{37289C3C-E334-4F93-A0DE-F69EDA08E656} = {9A928CCA-526B-4C8F-8080-949B1FEF7464}
-		{0DAAF9BD-11BF-4FD8-BEDF-3C8C2852C882} = {37289C3C-E334-4F93-A0DE-F69EDA08E656}
-		{9CEF24DA-0164-499C-AEB1-3E2A9B4E6B5B} = {0B079F58-22D2-48A0-BCED-B2BC7180DF20}
-		{E8D5184A-7898-4AC0-8E69-787684E98E77} = {9DCCE858-101B-4995-88D2-92F052CB72D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB080A01-47D7-4AE6-98EE-CE86D4294DB8}

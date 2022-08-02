@@ -45,7 +45,22 @@
       "ProjectGuid": "e8d5184a-7898-4ac0-8e69-787684e98e77",
       "DisplayName": "Code Analysis",
       "ColorIndex": 7
+    },
+    "844b713c-2c6a-484a-ab29-77160781ec16": {
+      "ProjectGuid": "844b713c-2c6a-484a-ab29-77160781ec16",
+      "DisplayName": "v10_1_5_CU0",
+      "ColorIndex": 8
+    },
+    "f848d7a5-d062-413c-95cc-a0015e478cdd": {
+      "ProjectGuid": "f848d7a5-d062-413c-95cc-a0015e478cdd",
+      "DisplayName": "ChatIntegrationHelper",
+      "ColorIndex": 9
+    },
+    "54253f37-0427-438f-9c58-4792a5cda9b0": {
+      "ProjectGuid": "54253f37-0427-438f-9c58-4792a5cda9b0",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 11
 }

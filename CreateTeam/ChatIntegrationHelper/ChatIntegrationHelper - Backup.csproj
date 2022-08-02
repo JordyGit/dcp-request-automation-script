@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="NATS.Client">
+      <HintPath>..\Dlls\messagebroker\NATS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SLMessageBroker">
+      <HintPath>..\Dlls\messagebroker\SLMessageBroker.dll</HintPath>
+    </Reference>
+    <Reference Include="SLMessageBrokerXmlWriter">
+      <HintPath>..\Dlls\messagebroker\SLMessageBrokerXmlWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="SLSharedBrainLite">
+      <HintPath>..\Dlls\messagebroker\SLSharedBrainLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
