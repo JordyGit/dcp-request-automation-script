@@ -66,27 +66,41 @@ public class Script
 	{
 		try
 		{
-			var ownerEmail = engine.GetScriptParam("Team Owner Email");
-			if (string.IsNullOrWhiteSpace(ownerEmail?.Value))
+			var ownerEmailParam = engine.GetScriptParam("Team Owner Email");
+			if (string.IsNullOrWhiteSpace(ownerEmailParam?.Value))
 			{
 				engine.ExitFail("'Team Owner Email' parameter is required.");
 				return;
 			}
 
-			var teamName = engine.GetScriptParam("Team Name");
-			if (string.IsNullOrWhiteSpace(teamName?.Value))
+			var teamNameParam = engine.GetScriptParam("Team Name");
+			if (string.IsNullOrWhiteSpace(teamNameParam?.Value))
 			{
 				engine.ExitFail("'Team Name' parameter is required.");
 				return;
 			}
-
-			if (!ChatIntegrationHelper.Teams.TryCreateTeam(engine.Log, teamName.Value, ownerEmail.Value))
+			
+			var teamsMemoryFile = engine.GetMemory("Teams");
+			if (teamsMemoryFile == null)
+			{
+				engine.ExitFail("'Teams' memory file is required.");
+				return;
+			}
+			
+			if (!ChatIntegrationHelper.Teams.TryCreateTeam(engine.Log, teamNameParam.Value, ownerEmailParam.Value, out var teamId))
 			{
 				engine.ExitFail("Couldn't create team.");
 				return;
 			}
 
-			engine.ExitSuccess("The team should be created soon!");
+			teamsMemoryFile.Set($"{teamNameParam.Value} ({teamId})", teamId);
+
+			engine.ExitSuccess($"The team with id {teamId} should be created soon!");
+		}
+		catch (ScriptAbortException)
+		{
+			// Also ExitSuccess is an ScriptAbortException
+			throw;
 		}
 		catch (Exception e)
 		{
