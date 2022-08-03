@@ -49,6 +49,7 @@ DATE		VERSION		AUTHOR			COMMENTS
 ****************************************************************************
 */
 
+using System;
 using Skyline.DataMiner.Automation;
 using SLChatIntegrationHelper;
 
@@ -63,27 +64,33 @@ public class Script
 	/// <param name="engine">Link with SLAutomation process.</param>
 	public void Run(Engine engine)
 	{
-		var ownerEmail = engine.GetScriptParam("Team Owner Email");
-		if (string.IsNullOrWhiteSpace(ownerEmail?.Value))
+		try
 		{
-			engine.ExitFail("'Team Owner Email' parameter is required.");
-			return;
-		}
+			var ownerEmail = engine.GetScriptParam("Team Owner Email");
+			if (string.IsNullOrWhiteSpace(ownerEmail?.Value))
+			{
+				engine.ExitFail("'Team Owner Email' parameter is required.");
+				return;
+			}
 
-		var teamName = engine.GetScriptParam("Team Name");
-		if (string.IsNullOrWhiteSpace(teamName?.Value))
+			var teamName = engine.GetScriptParam("Team Name");
+			if (string.IsNullOrWhiteSpace(teamName?.Value))
+			{
+				engine.ExitFail("'Team Name' parameter is required.");
+				return;
+			}
+
+			if (!ChatIntegrationHelper.Teams.TryCreateTeam(engine.Log, teamName.Value, ownerEmail.Value))
+			{
+				engine.ExitFail("Couldn't create team.");
+				return;
+			}
+
+			engine.ExitSuccess("The team should be created soon!");
+		}
+		catch (Exception e)
 		{
-			engine.ExitFail("'Team Name' parameter is required.");
-			return;
+			engine.ExitFail($"An exception occurred with the following message: {e.Message}");
 		}
-
-		if (!ChatIntegrationHelper.Teams.TryCreateTeam(engine.Log, teamName.Value, ownerEmail.Value))
-		{
-			engine.ExitFail("Couldn't create team.");
-			return;
-		}
-
-		engine.ExitSuccess("The team should be created soon!");
-		return;
 	}
 }
