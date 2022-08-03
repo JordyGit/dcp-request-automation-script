@@ -40,13 +40,6 @@
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <ItemGroup>
-    <!-- Copies the next dlls to the Dlls folder, so it can be copied manually to C:\Skyline DataMiner\ProtocolScripts\DllImport -->
-    <ContentWithTargetPath Include="..\SLChatIntegrationHelper\bin\Debug\SLChatIntegrationHelper.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <TargetPath>..\..\..\Dlls\SLChatIntegrationHelper.dll</TargetPath>
-    </ContentWithTargetPath>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="SLChatIntegrationHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dlls\SLChatIntegrationHelper.dll</HintPath>
@@ -84,7 +77,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties DisLinkedXmlFile="..\CreateTeam.xml" DisProjectType="automationScriptProject" DisLinkId="1" />
+      <UserProperties DisLinkId="1" DisProjectType="automationScriptProject" DisLinkedXmlFile="..\CreateTeam.xml" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

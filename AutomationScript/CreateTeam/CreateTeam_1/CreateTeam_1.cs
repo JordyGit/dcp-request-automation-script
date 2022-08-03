@@ -79,14 +79,14 @@ public class Script
 				engine.ExitFail("'Team Name' parameter is required.");
 				return;
 			}
-			
+
 			var teamsMemoryFile = engine.GetMemory("Teams");
 			if (teamsMemoryFile == null)
 			{
 				engine.ExitFail("'Teams' memory file is required.");
 				return;
 			}
-			
+
 			if (!ChatIntegrationHelper.Teams.TryCreateTeam(engine.Log, teamNameParam.Value, ownerEmailParam.Value, out var teamId))
 			{
 				engine.ExitFail("Couldn't create team.");
