@@ -96,21 +96,13 @@ public class Script
 				return;
 			}
 
-			if (!ChatIntegrationHelper.Teams.TryAddTeamMember(engine.Log, teamIdParam.Value, teamMembersToAdd, out var addedTeamMembersEmails))
+			if (!ChatIntegrationHelper.Teams.TryAddTeamMember(engine.Log, teamIdParam.Value, teamMembersToAdd))
 			{
 				engine.ExitFail($"Couldn't add the members [{string.Join(", ", teamMembersToAdd)}] to the team with id {teamIdParam.Value}.");
 				return;
 			}
 
-			if (addedTeamMembersEmails.Length == teamMembersToAdd.Length)
-			{
-				engine.ExitSuccess($"The members [{string.Join(", ", addedTeamMembersEmails)}] are added to the team with id {teamIdParam.Value}!");
-
-			}
-			else
-			{
-				engine.ExitSuccess($"The members [{string.Join(", ", addedTeamMembersEmails)}] are added to the team with id {teamIdParam.Value}, but these others members couldn't be added: [{string.Join(", ", teamMembersToAdd.Where(toAdd => !addedTeamMembersEmails.Contains(toAdd)))}]!");
-			}
+			engine.ExitSuccess($"The members [{string.Join(", ", teamMembersToAdd)}] are added to the team with id {teamIdParam.Value}!");
 		}
 		catch (ScriptAbortException)
 		{

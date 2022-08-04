@@ -118,3 +118,4 @@ C:\GIT\dcp-request-automation-script\AutomationScript\CreateTeam\SLChatIntegrati
 C:\GIT\dcp-request-automation-script\AutomationScript\CreateTeam\SLChatIntegrationHelper\obj\Debug\SLChatIntegrationHelper.csproj.CopyComplete
 C:\GIT\dcp-request-automation-script\AutomationScript\CreateTeam\SLChatIntegrationHelper\obj\Debug\SLChatIntegrationHelper.dll
 C:\GIT\dcp-request-automation-script\AutomationScript\CreateTeam\SLChatIntegrationHelper\obj\Debug\SLChatIntegrationHelper.pdb
+C:\GIT\dcp-request-automation-script\AutomationScript\CreateTeam\SLChatIntegrationHelper\obj\Debug\SLChatIntegrationHelper.csproj.AssemblyReference.cache

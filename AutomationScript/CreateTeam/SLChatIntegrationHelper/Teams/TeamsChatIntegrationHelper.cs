@@ -83,10 +83,8 @@ namespace SLChatIntegrationHelper.Teams
             }
         }
 
-        public bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails, out string[] addedTeamMembersEmails)
+        public bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails)
         {
-            addedTeamMembersEmails = null;
-
             // Connect
             if (!Helper.TryConnectToMessageBroker(log, out var broker))
             {
@@ -101,7 +99,11 @@ namespace SLChatIntegrationHelper.Teams
 
             // Send call
             var body = new JObject();
-            body.Add("teamMembers", JArray.FromObject(teamMemberEmails));
+            body.Add("teamMembers", JArray.FromObject(teamMemberEmails.Select(teamMemberEmail => new JObject()
+            {
+                {"email", teamMemberEmail},
+                {"memberType", "member"}
+            })));
 
             if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams/v1-0/team/{teamId}/members", token, body, 10000, out var response))
             {
@@ -115,73 +117,58 @@ namespace SLChatIntegrationHelper.Teams
             broker.Dispose();
 
             // Finish
-            // TODO REMOVE 204
-            // TODO REMOVE 204
-            // TODO REMOVE 204
-            // TODO REMOVE 204
-            // TODO REMOVE 204
-            if (response.StatusCode != 200 && response.StatusCode != 207 && response.StatusCode != 204)
+            if (response.StatusCode != 200 && response.StatusCode != 204)
             {
                 log($"Failed, didn't receive a successful response from DCP. Response was: Code: {response.StatusCode}, Body: {response.Body}");
                 return false;
             }
 
+            log($"Received a successful response, all the members were added to the team. Response was: Code: {response.StatusCode}, Body: {response.Body}");
+            return true;
+        }
 
-            // TODO ADJUST LOGS
-            if (response.StatusCode == 200)
+        public bool TryAddTeamOwner(Action<string> log, string teamId, string[] teamOwnerEmails)
+        {
+            // Connect
+            if (!Helper.TryConnectToMessageBroker(log, out var broker))
             {
-                log($"Received a successful response, all the members were added to the team. Response was: Code: {response.StatusCode}, Body: {response.Body}");
-            }
-            else if (response.StatusCode == 207)
-            {
-                log(
-                    $"Received a partial successful response, only some members were added to the team. Response was: Code: {response.StatusCode}, Body: {response.Body}");
-            }
-            // TODO REMOVE WHEN NEW API V 
-            // TODO REMOVE WHEN NEW API V 
-            // TODO REMOVE WHEN NEW API V 
-            // TODO REMOVE WHEN NEW API V 
-            // TODO REMOVE WHEN NEW API V 
-            else if (response.StatusCode == 204)
-            {
-                log($"Received a successful response, all the members were added to the team. Response was: Code: {response.StatusCode}, Body: {response.Body}");
-            }
-
-            // Convert response
-            try
-            {
-                var responseObject = JsonConvert.DeserializeObject<JObject>(response.Body);
-                if (responseObject == null)
-                {
-                    log("Couldn't deserialize the response.");
-                    return false;
-                }
-
-                // TODO align with api :)
-                // TODO align with api :)
-                // TODO align with api :)
-                // TODO align with api :)
-                // TODO align with api :)
-                if (!responseObject.TryGetValue("successfullyAddedMembers", out var jValue))
-                {
-                    log("Couldn't parse the list from the response.");
-                    return false;
-                }
-
-                if (!(jValue is JArray responses))
-                {
-                    log("The list from the response is not valid or null.");
-                    return false;
-                }
-
-                addedTeamMembersEmails = responses.Values<string>().ToArray();
-                return true;
-            }
-            catch (Exception e)
-            {
-                log($"An exception occurred while converting the response from DCP with message: {e.Message}.");
                 return false;
             }
+
+            // Authenticate
+            if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
+            {
+                return false;
+            }
+
+            // Send call
+            var body = new JObject();
+            body.Add("teamMembers", JArray.FromObject(teamOwnerEmails.Select(teamOwnerEmail => new JObject()
+            {
+                {"email", teamOwnerEmail},
+                {"memberType", "owner"}
+            })));
+
+            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams/v1-0/team/{teamId}/members", token, body, 10000, out var response))
+            {
+                // Cleanup
+                broker.Dispose();
+
+                return false;
+            }
+
+            // Cleanup
+            broker.Dispose();
+
+            // Finish
+            if (response.StatusCode != 200 && response.StatusCode != 204)
+            {
+                log($"Failed, didn't receive a successful response from DCP. Response was: Code: {response.StatusCode}, Body: {response.Body}");
+                return false;
+            }
+
+            log($"Received a successful response, all the owners were added to the team. Response was: Code: {response.StatusCode}, Body: {response.Body}");
+            return true;
         }
 
         public bool TryCreateChannel(Action<string> log, string teamId, string channelName, string channelDescription, bool channelIsFavorite, out string channelId)

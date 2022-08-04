@@ -16,15 +16,24 @@ namespace SLChatIntegrationHelper.Teams {
         bool TryCreateTeam(Action<string> log, string teamName, string teamOwnerEmail, out string teamId);
 
         /// <summary>
-        /// Tries to add the given members to the given team in Microsoft Teams.
+        /// Tries to add the given emails as member to the given team in Microsoft Teams.
         /// </summary>
         /// <param name="log">An action used to log. Example: engine.Log</param>
         /// <param name="teamId">The id of the team where to add the members. This id is returned when creating a team using <see cref="TryCreateTeam"/>.</param>
-        /// <param name="teamMemberEmails">The email addresses of the members to add to the team. Note these email addresses must be a part of the tenant.</param>
-        /// <param name="addedTeamMembersEmails">The members successfully added to the team.</param>
-        /// <returns>If at least one member could be added to the team, the members added to the team are returned in <paramref name="addedTeamMembersEmails"/>.</returns>
+        /// <param name="teamMemberEmails">The email addresses of the members to add to the team. Note these email addresses must be a part of the tenant, otherwise this will fail.</param>
+        /// <returns>If all the members could be added to the team, when one email is not found in the tenant, none of the members will be added and this will return false.</returns>
         /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
-        bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails, out string[] addedTeamMembersEmails);
+        bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails);
+
+        /// <summary>
+        /// Tries to add the given emails as owner to the given team in Microsoft Teams.
+        /// </summary>
+        /// <param name="log">An action used to log. Example: engine.Log</param>
+        /// <param name="teamId">The id of the team where to add the owners. This id is returned when creating a team using <see cref="TryCreateTeam"/>.</param>
+        /// <param name="teamOwnerEmails">The email addresses of the owners to add to the team. Note these email addresses must be a part of the tenant, otherwise this will fail.</param>
+        /// <returns>If all the owners could be added to the team, when one email is not found in the tenant, none of the owners will be added and this will return false.</returns>
+        /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        bool TryAddTeamOwner(Action<string> log, string teamId, string[] teamOwnerEmails);
 
         /// <summary>
         /// Tries to create a channel in the given team in Microsoft Teams.
