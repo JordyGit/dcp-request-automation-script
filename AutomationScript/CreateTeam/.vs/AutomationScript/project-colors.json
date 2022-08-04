@@ -45,7 +45,37 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "0512dfc7-817e-4996-bcf3-91d35fe2eaf5": {
+      "ProjectGuid": "0512dfc7-817e-4996-bcf3-91d35fe2eaf5",
+      "DisplayName": "CreateChannel",
+      "ColorIndex": 8
+    },
+    "7007d4ce-e705-4b81-a8e6-06e133c744a3": {
+      "ProjectGuid": "7007d4ce-e705-4b81-a8e6-06e133c744a3",
+      "DisplayName": "CreateChannel_1",
+      "ColorIndex": 9
+    },
+    "7d3227e0-54df-4f02-becb-7efcc5d4b0d7": {
+      "ProjectGuid": "7d3227e0-54df-4f02-becb-7efcc5d4b0d7",
+      "DisplayName": "AddTeamMembers",
+      "ColorIndex": 10
+    },
+    "a1f05110-7bed-4f2e-a8e1-e8615541234b": {
+      "ProjectGuid": "a1f05110-7bed-4f2e-a8e1-e8615541234b",
+      "DisplayName": "AddTeamMembers_1",
+      "ColorIndex": 11
+    },
+    "9da748c4-2968-4d4e-81dd-1107eaf5a133": {
+      "ProjectGuid": "9da748c4-2968-4d4e-81dd-1107eaf5a133",
+      "DisplayName": "SendChannelNotification",
+      "ColorIndex": 12
+    },
+    "35522f75-1702-45b1-adf2-635a092115a2": {
+      "ProjectGuid": "35522f75-1702-45b1-adf2-635a092115a2",
+      "DisplayName": "SendChannelNotification_1",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 14
 }

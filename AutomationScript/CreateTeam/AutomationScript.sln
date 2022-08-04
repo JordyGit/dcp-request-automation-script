@@ -53,6 +53,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{A38B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTeamMembers_1", "AddTeamMembers_1\AddTeamMembers_1.csproj", "{A1F05110-7BED-4F2E-A8E1-E8615541234B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SendChannelNotification", "SendChannelNotification", "{9DA748C4-2968-4D4E-81DD-1107EAF5A133}"
+	ProjectSection(SolutionItems) = preProject
+		SendChannelNotification.xml = SendChannelNotification.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{D53726B6-3025-49FE-BDCD-7089AE186B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendChannelNotification_1", "SendChannelNotification_1\SendChannelNotification_1.csproj", "{35522F75-1702-45B1-ADF2-635A092115A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +84,10 @@ Global
 		{A1F05110-7BED-4F2E-A8E1-E8615541234B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1F05110-7BED-4F2E-A8E1-E8615541234B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1F05110-7BED-4F2E-A8E1-E8615541234B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35522F75-1702-45B1-ADF2-635A092115A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35522F75-1702-45B1-ADF2-635A092115A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35522F75-1702-45B1-ADF2-635A092115A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35522F75-1702-45B1-ADF2-635A092115A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +103,9 @@ Global
 		{7D3227E0-54DF-4F02-BECB-7EFCC5D4B0D7} = {8B32CE97-7FCE-45C0-BB81-FF31F4A23730}
 		{A38B3031-7F03-4301-8AA6-8FD9EDD26FAD} = {7D3227E0-54DF-4F02-BECB-7EFCC5D4B0D7}
 		{A1F05110-7BED-4F2E-A8E1-E8615541234B} = {A38B3031-7F03-4301-8AA6-8FD9EDD26FAD}
+		{9DA748C4-2968-4D4E-81DD-1107EAF5A133} = {8B32CE97-7FCE-45C0-BB81-FF31F4A23730}
+		{D53726B6-3025-49FE-BDCD-7089AE186B8C} = {9DA748C4-2968-4D4E-81DD-1107EAF5A133}
+		{35522F75-1702-45B1-ADF2-635A092115A2} = {D53726B6-3025-49FE-BDCD-7089AE186B8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87EE2F9E-F61F-46A9-A2F5-60F23E767BCC}

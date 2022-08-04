@@ -21,9 +21,10 @@ namespace SLChatIntegrationHelper.Teams {
         /// <param name="log">An action used to log. Example: engine.Log</param>
         /// <param name="teamId">The id of the team where to add the members. This id is returned when creating a team using <see cref="TryCreateTeam"/>.</param>
         /// <param name="teamMemberEmails">The email addresses of the members to add to the team. Note these email addresses must be a part of the tenant.</param>
-        /// <returns>If the members could be added to the team.</returns>
+        /// <param name="addedTeamMembersEmails">The members successfully added to the team.</param>
+        /// <returns>If at least one member could be added to the team, the members added to the team are returned in <paramref name="addedTeamMembersEmails"/>.</returns>
         /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
-        bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails);
+        bool TryAddTeamMember(Action<string> log, string teamId, string[] teamMemberEmails, out string[] addedTeamMembersEmails);
 
         /// <summary>
         /// Tries to create a channel in the given team in Microsoft Teams.
@@ -38,7 +39,14 @@ namespace SLChatIntegrationHelper.Teams {
         /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
         bool TryCreateChannel(Action<string> log, string teamId, string channelName, string channelDescription, bool channelIsFavorite, out string channelId);
 
-        // TODO will it be possible to have one method for channel / group chat messages/notifications or do we need 2?
-        bool TrySendNotification(Action<string> log, string reference, string message);
+        /// <summary>
+        /// Tries to send a notification/message in the given channel in Microsoft Teams.
+        /// </summary>
+        /// <param name="log">An action used to log. Example: engine.Log</param>
+        /// <param name="channelId">The id of the channel where to send the notification/message.</param>
+        /// <param name="notification">The notification/message to send in the channel.</param>
+        /// <returns>If the notification/message could be sent to the channel.</returns>
+        /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        bool TrySendNotification(Action<string> log, string channelId, string notification);
     }
 }
