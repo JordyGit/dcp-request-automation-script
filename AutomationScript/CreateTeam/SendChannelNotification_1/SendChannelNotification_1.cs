@@ -66,6 +66,13 @@ public class Script
 	{
 		try
 		{
+			var teamIdParam = engine.GetScriptParam("Team Id");
+			if (string.IsNullOrWhiteSpace(teamIdParam?.Value))
+			{
+				engine.ExitFail("'Team Id' parameter is required.");
+				return;
+			}
+
 			var channelIdParam = engine.GetScriptParam("Channel Id");
 			if (string.IsNullOrWhiteSpace(channelIdParam?.Value))
 			{
@@ -80,8 +87,7 @@ public class Script
 				return;
 			}
 
-			if (!ChatIntegrationHelper.Teams.TrySendNotification(engine.Log, channelIdParam.Value, notificationParam.Value))
-			{
+			if (!ChatIntegrationHelper.Teams.TrySendNotification(engine.Log, teamIdParam.Value, channelIdParam.Value, notificationParam.Value)) {
 				engine.ExitFail($"Couldn't send the notification to the channel with id {channelIdParam.Value}.");
 				return;
 			}

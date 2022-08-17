@@ -247,7 +247,7 @@ namespace SLChatIntegrationHelper.Teams
             }
         }
 
-        public bool TrySendNotification(Action<string> log, string channelId, string notification)
+        public bool TrySendNotification(Action<string> log, string teamId, string channelId, string notification)
         {
             // Connect
             if (!Helper.TryConnectToMessageBroker(log, out var broker))
@@ -263,9 +263,9 @@ namespace SLChatIntegrationHelper.Teams
 
             // Send call
             var body = new JObject();
-            body.Add("notification", notification);
+            body.Add("messageContent", notification);
 
-            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams/v1-0/channel/{channelId}/notification", token, body, 10000, out var response))
+            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams/v1-0/team/{teamId}/channel/{channelId}/message", token, body, 10000, out var response))
             {
                 // Cleanup
                 broker.Dispose();

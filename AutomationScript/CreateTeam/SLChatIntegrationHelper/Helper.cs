@@ -60,7 +60,7 @@ namespace SLChatIntegrationHelper
 
             if (tokenResponse.Error != null && tokenResponse.Error.ContainsError)
             {
-                log($"Couldn't fetch DMS Authentication token because of {string.Join(";", tokenResponse.Error.Errors.Select(e => $"{e.Type}: {e.Message}"))}.");
+                log($"Couldn't fetch DMS Authentication token because of {string.Join(";", tokenResponse.Error.Errors.Select(e => $"{e.Type}: {e.Message}"))}");
                 return false;
             }
 

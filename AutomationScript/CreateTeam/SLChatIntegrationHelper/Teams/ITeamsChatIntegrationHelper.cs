@@ -52,10 +52,11 @@ namespace SLChatIntegrationHelper.Teams {
         /// Tries to send a notification/message in the given channel in Microsoft Teams.
         /// </summary>
         /// <param name="log">An action used to log. Example: engine.Log</param>
+        /// <param name="teamId">The id of the team where to create the channel. This id is returned when creating a team using <see cref="TryCreateTeam"/>.</param>
         /// <param name="channelId">The id of the channel where to send the notification/message.</param>
         /// <param name="notification">The notification/message to send in the channel.</param>
         /// <returns>If the notification/message could be sent to the channel.</returns>
         /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
-        bool TrySendNotification(Action<string> log, string channelId, string notification);
+        bool TrySendNotification(Action<string> log, string teamId,  string channelId, string notification);
     }
 }

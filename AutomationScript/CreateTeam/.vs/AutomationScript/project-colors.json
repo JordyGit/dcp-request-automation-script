@@ -75,7 +75,17 @@
       "ProjectGuid": "35522f75-1702-45b1-adf2-635a092115a2",
       "DisplayName": "SendChannelNotification_1",
       "ColorIndex": 13
+    },
+    "a5a29c8b-a040-4b57-b4f4-2198d6fcfcfe": {
+      "ProjectGuid": "a5a29c8b-a040-4b57-b4f4-2198d6fcfcfe",
+      "DisplayName": "AddTeamOwners",
+      "ColorIndex": 14
+    },
+    "50e9a31a-59ad-434d-a0b0-a52e94900255": {
+      "ProjectGuid": "50e9a31a-59ad-434d-a0b0-a52e94900255",
+      "DisplayName": "AddTeamOwners_1",
+      "ColorIndex": 15
     }
   },
-  "NextColorIndex": 14
+  "NextColorIndex": 0
 }

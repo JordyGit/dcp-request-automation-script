@@ -14,16 +14,19 @@
 	</Memory>
 
 	<Parameters>
-		<ScriptParameter id="1" type="string" values="Channels">
+		<ScriptParameter id="1" type="string" values="Teams">
+			<Description>Team Id</Description>
+		</ScriptParameter>
+		<ScriptParameter id="2" type="string" values="Channels">
 			<Description>Channel Id</Description>
 		</ScriptParameter>
-		<ScriptParameter id="2" type="string" values="">
+		<ScriptParameter id="3" type="string" values="">
 			<Description>Notification</Description>
 		</ScriptParameter>
 	</Parameters>
 
 	<Script>
-		<Exe id="3" type="csharp">
+		<Exe id="4" type="csharp">
 			<Value><![CDATA[[Project:SendChannelNotification_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Message></Message>
