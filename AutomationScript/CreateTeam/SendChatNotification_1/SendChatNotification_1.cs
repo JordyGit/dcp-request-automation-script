@@ -45,11 +45,14 @@ Revision History:
 
 DATE		VERSION		AUTHOR			COMMENTS
 
-04/08/2022	1.0.0.1		Jordy Ampe, Skyline	Initial version
+19/08/2022	1.0.0.1		Jordy Ampe, Skyline	Initial version
 ****************************************************************************
 */
 
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
 using Skyline.DataMiner.Automation;
 using SLChatIntegrationHelper;
 
@@ -66,17 +69,10 @@ public class Script
 	{
 		try
 		{
-			var teamIdParam = engine.GetScriptParam("Team Id");
-			if (string.IsNullOrWhiteSpace(teamIdParam?.Value))
+			var chatIdParam = engine.GetScriptParam("Chat Id");
+			if (string.IsNullOrWhiteSpace(chatIdParam?.Value))
 			{
-				engine.ExitFail("'Team Id' parameter is required.");
-				return;
-			}
-
-			var channelIdParam = engine.GetScriptParam("Channel Id");
-			if (string.IsNullOrWhiteSpace(channelIdParam?.Value))
-			{
-				engine.ExitFail("'Channel Id' parameter is required.");
+				engine.ExitFail("'Chat Id' parameter is required.");
 				return;
 			}
 
@@ -87,12 +83,13 @@ public class Script
 				return;
 			}
 
-			if (!ChatIntegrationHelper.Teams.TrySendChannelNotification(engine.Log, teamIdParam.Value, channelIdParam.Value, notificationParam.Value)) {
-				engine.ExitFail($"Couldn't send the notification to the channel with id {channelIdParam.Value}.");
+			if (!ChatIntegrationHelper.Teams.TrySendChatNotification(engine.Log, chatIdParam.Value, notificationParam.Value))
+			{
+				engine.ExitFail($"Couldn't send the notification to the chat with id {chatIdParam.Value}.");
 				return;
 			}
 
-			engine.ExitSuccess($"The notification was sent to the channel with id {channelIdParam.Value}!");
+			engine.ExitSuccess($"The notification was sent to the chat with id {chatIdParam.Value}!");
 		}
 		catch (ScriptAbortException)
 		{

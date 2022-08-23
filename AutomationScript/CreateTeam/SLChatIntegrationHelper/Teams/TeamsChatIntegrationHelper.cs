@@ -21,6 +21,7 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                broker.Dispose();
                 return false;
             }
 
@@ -94,6 +95,7 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                broker.Dispose();
                 return false;
             }
 
@@ -138,6 +140,7 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                broker.Dispose();
                 return false;
             }
 
@@ -184,6 +187,7 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                broker.Dispose();
                 return false;
             }
 
@@ -247,7 +251,7 @@ namespace SLChatIntegrationHelper.Teams
             }
         }
 
-        public bool TrySendNotification(Action<string> log, string teamId, string channelId, string notification)
+        public bool TrySendChannelNotification(Action<string> log, string teamId, string channelId, string notification)
         {
             // Connect
             if (!Helper.TryConnectToMessageBroker(log, out var broker))
@@ -258,14 +262,15 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                broker.Dispose();
                 return false;
             }
 
             // Send call
             var body = new JObject();
-            body.Add("messageContent", notification);
+            body.Add("Notification", notification);
 
-            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams/v1-0/team/{teamId}/channel/{channelId}/message", token, body, 10000, out var response))
+            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams-notification/v1-0/team/{teamId}/channel/{channelId}/notification", token, body, 10000, out var response))
             {
                 // Cleanup
                 broker.Dispose();
@@ -284,6 +289,47 @@ namespace SLChatIntegrationHelper.Teams
             }
 
             log($"Received a successful response, the notification was sent to the channel. Response was: Code: {response.StatusCode}, Body: {response.Body}");
+            return true;
+        }
+
+        public bool TrySendChatNotification(Action<string> log, string chatId, string notification)
+        {
+            // Connect
+            if (!Helper.TryConnectToMessageBroker(log, out var broker))
+            {
+                return false;
+            }
+
+            // Authenticate
+            if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
+            {
+                broker.Dispose();
+                return false;
+            }
+
+            // Send call
+            var body = new JObject();
+            body.Add("Notification", notification);
+
+            if (!Helper.TrySendDcpRequest(log, broker, HttpMethod.Post, $"/api/dms-teams-notification/v1-0/chat/{chatId}/notification", token, body, 10000, out var response))
+            {
+                // Cleanup
+                broker.Dispose();
+
+                return false;
+            }
+
+            // Cleanup
+            broker.Dispose();
+
+            // Finish
+            if (response.StatusCode != 200)
+            {
+                log($"Failed, didn't receive a successful response from DCP. Response was: Code: {response.StatusCode}, Body: {response.Body}");
+                return false;
+            }
+
+            log($"Received a successful response, the notification was sent to the chat. Response was: Code: {response.StatusCode}, Body: {response.Body}");
             return true;
         }
     }

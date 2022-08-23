@@ -32,7 +32,7 @@ namespace SLChatIntegrationHelper.Teams {
         /// <param name="teamId">The id of the team where to add the owners. This id is returned when creating a team using <see cref="TryCreateTeam"/>.</param>
         /// <param name="teamOwnerEmails">The email addresses of the owners to add to the team. Note these email addresses must be a part of the tenant, otherwise this will fail.</param>
         /// <returns>If all the owners could be added to the team, when one email is not found in the tenant, none of the owners will be added and this will return false.</returns>
-        /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        /// <remarks>The organizations Microsoft Teams tenant must be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
         bool TryAddTeamOwner(Action<string> log, string teamId, string[] teamOwnerEmails);
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SLChatIntegrationHelper.Teams {
         /// <param name="channelIsFavorite">If the channel to be created should be marked as favorite.</param>
         /// <param name="channelId">The id of the channel if created successfully. Save this id for future use, for example in a memory file.</param>
         /// <returns>If the channel could be created in the team and in that case also the channel id. Save this channel id (in a memory file) for future use.</returns>
-        /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        /// <remarks>The organizations Microsoft Teams tenant must be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
         bool TryCreateChannel(Action<string> log, string teamId, string channelName, string channelDescription, bool channelIsFavorite, out string channelId);
 
         /// <summary>
@@ -56,7 +56,17 @@ namespace SLChatIntegrationHelper.Teams {
         /// <param name="channelId">The id of the channel where to send the notification/message.</param>
         /// <param name="notification">The notification/message to send in the channel.</param>
         /// <returns>If the notification/message could be sent to the channel.</returns>
-        /// <remarks>The organizations Microsoft Teams tenant can be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
-        bool TrySendNotification(Action<string> log, string teamId,  string channelId, string notification);
+        /// <remarks>The organizations Microsoft Teams tenant must be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        bool TrySendChannelNotification(Action<string> log, string teamId,  string channelId, string notification);
+
+        /// <summary>
+        /// Tries to send a notification/message in the given private/group chat in Microsoft Teams.
+        /// </summary>
+        /// <param name="log">An action used to log. Example: engine.Log</param>
+        /// <param name="chatId">The id of the private/group chat where to send the notification/message.</param>
+        /// <param name="notification">The notification/message to send in the chat.</param>
+        /// <returns>If the notification/message could be sent to the channel.</returns>
+        /// <remarks>The organizations Microsoft Teams tenant must be configured in the <a href="https://admin.dataminer.services">DCP Admin App</a>.</remarks>
+        bool TrySendChatNotification(Action<string> log, string chatId, string notification);
     }
 }
