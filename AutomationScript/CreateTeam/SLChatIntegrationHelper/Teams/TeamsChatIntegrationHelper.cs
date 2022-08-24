@@ -21,7 +21,9 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
+
                 return false;
             }
 
@@ -95,7 +97,9 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
+
                 return false;
             }
 
@@ -140,7 +144,9 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
+
                 return false;
             }
 
@@ -187,8 +193,10 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
-                return false;
+
+                return false; ;
             }
 
             // Send call
@@ -262,7 +270,9 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
+
                 return false;
             }
 
@@ -303,7 +313,9 @@ namespace SLChatIntegrationHelper.Teams
             // Authenticate
             if (!Helper.TryFetchDmsAccessToken(log, broker, out var token))
             {
+                // Cleanup
                 broker.Dispose();
+
                 return false;
             }
 
